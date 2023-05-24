@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="wordle.css">
+    
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+          <a href="index.html">My Logo</a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="form.html">Form Fighters</a></li>
+            <li><a href="wordle.html">Wordle</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+    </header>
+
+    <section id="title">
+        <div class="game-title">
+            <h2>Wordle but Worse</h2>
+        </div>
+        <div class="game-description">
+            <p>Wordle but Worse is a copy of the game Wordle, found at</p> <a style="color: white;" href="https://www.nytimes.com/games/wordle/index.html">https://www.nytimes.com/games/wordle/index.html.</a> <br>
+            <p>Words are requested through XHR as a .json document, containing all words in the English dictionary. On page load, the .json is parsed and a new list of 5-letter-only words is created.</p>
+            <p>To get the possible solutions and valid words to be submitted, every time the player presses 'RETURN', the word list is being parsed and the game looks for matches.</p>
+            <p>(This could cause performance issues if run on a web server, but for the scope of this project, it's not really an issue)</p> <br>
+            <p>Sidenote: Page is responsive, but the game can NOT be played on mobile. Whoops.</p> <br>
+            <p>The difference between this and the NY Times Wordle is that this game does not give feedback on the correctness of the answer, unless it's THE right answer. Hence, the name: Wordle but Worse.</p>
+            <p>"Show Solution" button added for convenience/playability.</p>
+        </div>
+    </section>
+    <section id="main-box">
+        <div class="game-container">
+            <table id="tab">
+                <tr data-row="0" id="row-1" class="row">
+                    <td data-cell="0" class="cell"></td>
+                    <td data-cell="1" class="cell"></td>
+                    <td data-cell="2" class="cell"></td>
+                    <td data-cell="3" class="cell"></td>
+                    <td data-cell="4" class="cell"></td>
+                </tr>
+                <tr data-row="1" id="row-2" class="row">
+                    <td data-cell="0" class="cell"></td>
+                    <td data-cell="1" class="cell"></td>
+                    <td data-cell="2" class="cell"></td>
+                    <td data-cell="3" class="cell"></td>
+                    <td data-cell="4" class="cell"></td>
+                </tr>
+                <tr data-row="2" id="row-3" class="row">
+                    <td data-cell="0" class="cell"></td>
+                    <td data-cell="1" class="cell"></td>
+                    <td data-cell="2" class="cell"></td>
+                    <td data-cell="3" class="cell"></td>
+                    <td data-cell="4" class="cell"></td>
+                </tr>
+                <tr data-row="3" id="row-4" class="row">
+                    <td data-cell="0" class="cell"></td>
+                    <td data-cell="1" class="cell"></td>
+                    <td data-cell="2" class="cell"></td>
+                    <td data-cell="3" class="cell"></td>
+                    <td data-cell="4" class="cell"></td>
+                </tr>
+                <tr data-row="4" id="row-5" class="row">
+                    <td data-cell="0" class="cell"></td>
+                    <td data-cell="1" class="cell"></td>
+                    <td data-cell="2" class="cell"></td>
+                    <td data-cell="3" class="cell"></td>
+                    <td data-cell="4" class="cell"></td>
+                </tr>
+                <tr data-row="5" id="row-6" class="row">
+                    <td data-cell="0" class="cell"></td>
+                    <td data-cell="1" class="cell"></td>
+                    <td data-cell="2" class="cell"></td>
+                    <td data-cell="3" class="cell"></td>
+                    <td data-cell="4" class="cell"></td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <section id="endgame">
+        <div class="endgame-container" id="endgame-container">
+
+        </div>
+    </section>
+    <section id="feedback-section">
+        <div class="feedback-container" id="feedback-container">
+            <p id="feedback"></p>
+        </div>
+    </section>
+    <section id="solution">
+        <div class="solution-button-container">
+            <button class="show-solution-button" id="show-solution-button">Show Solution</button>
+            <br>
+        </div>
+        <div class="solution-container" id="solution-container">
+            <h2 class="solution-text" id="solution-text">SOLTN</h2>
+        </div>
+    </section>
+    <script src="./wordle.js"></script>
+</body>

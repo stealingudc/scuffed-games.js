@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="form.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+          <a href="#">My Logo</a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="./wordle.html">Wordle</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+    </header>
+    <section game>
+        <div class="game-title">
+            <h2>Form Fighters</h2>
+        </div>
+        <div class="game-description">
+            <p>'Form Fighters' is a simple little game that uses forms as a player input and, respectively, output of a fetch request function.</p>
+            <p>Data is requested from the Reddit API and, as such, asynchronous functions and await calls are needed.</p> <br>
+            <p>Rules of the game are simple: You write a form, the game gets a post from Reddit, then compares the character count. Greater number wins.</p>
+        </div>
+        <div class="form-game-container">
+            <div class='difficulty'>
+                <div class="dropdown-control" id="dropdown-control">
+                    <button class='dropdown-button' id='dropdown-button'>Select Difficulty</button>
+                    <p class="current-difficulty" id="current-difficulty">Selected: Easy (r/AskReddit)</p>
+                </div>
+                <div class="dropdown-content" id="dropdown">
+                    <button class="difficulty-button" id="easy-diff">Easy (r/AskReddit)</button>
+                    <button class="difficulty-button" id="medium-diff">Medium (r/JavaScript)</button>
+                    <button class="difficulty-button" id="hard-diff">Hard (r/amitheasshole)</button>
+                </div>
+            </div>
+            <div class="form-container">
+                <div class="form" id="form">
+                    <label for="form-title" class="title-label">Title</label>
+                    <textarea class="form-title" id="form-title"></textarea>
+                    <label for="form-body" class="body-label">Body</label>
+                    <textarea class="form-body" id="form-body"></textarea>
+                    <button id="form-button" class="form-button">Submit</button>
+                </div>
+                <div class="flex-break"></div>
+                <div class="enemy-form" id="enemy-form" style="visibility: hidden;">
+                    <label for="form-title" class="title-label">Title</label>
+                    <textarea class="form-title" id="enemy-form-title"></textarea>
+                    <label for="form-body" class="body-label">Body</label>
+                    <textarea class="form-body" id="enemy-form-body"></textarea>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section endgame>
+        <div id="endgame" class="endgame">
+
+        </div>
+    </section>
+    <script src="./form.js"></script>
+</body>

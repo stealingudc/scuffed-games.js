@@ -10,6 +10,7 @@
     left: 0;
     right: 0;
     border: 2px solid black;
+    border-radius: 12px;
 }
 
 table {
@@ -21,10 +22,12 @@ td {
     font-family: sans-serif;
     font-size: 2.5rem;
     color: rgba(255, 255, 255, 0.75);
+    background-color: #1b1b1b;
     height: 16.66667%;
     width: 20%;
     text-align: center;
     border: 2px solid black;
+    border-radius: 10px;
 }
 
 .game-title {

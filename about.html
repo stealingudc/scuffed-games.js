@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="about.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+          <a href="index.html">Internet Sem. II</a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="form.html">Form Fighters</a></li>
+            <li><a href="wordle.html">Wordle</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+    </header>
+    <section lotsoftextlol>
+      <div class="everything">
+        <h2>Home Page</h2>
+        <p>The icons for the games on the home page use Vector Graphics and are made by me, using Figma, in about 10-15 minutes. I love minimalistic design, it's so easy.</p>
+        <h2>
+          Form Fighters
+        </h2>
+        <p>Form Fighters uses the Reddit API to get posts from three subreddits of choice:</p>
+        <ul>
+          <li>r/AskReddit</li>
+          <li>r/JavaScript</li>
+          <li>r/amitheasshole</li>
+        </ul>
+        <p>Each of the subreddits have different types of posts: Title-Only, Title + Image and Title + Body</p>
+        <ul>
+          <li>Title-only</li>
+          <li>Title + Image</li>
+          <li>Title + Text</li>
+        </ul>
+        <p>For the scope of this game, the images are ignored and only the text is taken into consideration.</p>
+        <p>The following is code used for getting said posts:</p>
+        <textarea readonly>
+          async function getPost(){
+            fetch('https://www.reddit.com/r/' + difficulty + '/hot.json')
+                .then((res) => {return res.json();})
+                .then((res) => {
+                    //Data sorting
+                    const postsArray = res.data.children;
+                    const currentPost = postsArray[(Math.random()*(10 - 1) + 1).toFixed(0)];
+                    enemyTitleContent = currentPost.data.title;
+                    enemyBodyContent = currentPost.data.selftext;
+                    //Game logic
+                    appendEnemyText();
+                    compareScores();
+                    return [currentPost.data.title, currentPost.data.selftext];
+                })
+                .catch(err => console.log(err));
+        }
+        </textarea>
+        <h2>
+          Wordle but Worse
+        </h2>
+        <p>Wordle but Worse uses a table as the container for the game, allowing for easy parsing through it and getting the current 'cursor' position.</p>
+        <textarea readonly>
+          function getPosition(){
+            const row = wordsSubmitted.length;
+            const cell = currentWord.length - 1;
+            if(row < 6){
+                return [row, cell];
+                
+            } else {
+                //Prevents 'properties of undefined' error == an out-of-bounds exception.
+                return [5, 4];
+            }
+            
+        }
+        
+        function updateWord(){
+            const [rowPosition, cellPosition] = getPosition(); 
+            const rows = Array.from(document.getElementsByClassName('row'));
+            const cell = rows[rowPosition].cells[cellPosition];
+            
+        
+            return cell;
+        }
+        </textarea>
+        <p>The way it's fed data is through an XMLHttpRequest to a .json file hosted on GitHub, free for use.</p>
+        <p>Following that, we make use of JavaScript's JSON object and map every value to a number. Then, the map is sorted, into 5-letter-words, respectively into the solution and possible words a player can input.</p>
+        <p>Check the source code for more details.</p>
+        <p>The condition for winning is that the player inputs the chosen word. Inputing 6 words without getting the correct one results in a loss.</p>
+        <h2>Notes</h2>
+        <ul>
+          <li>The 'New Game' button actually just refreshes the page. So, the code has to be built on a little bit to allow for states and session-based stuff.</li><br>
+          <li>Pressing 'BACKSPACE' when on the first character position in 'Wordle but Worse' displays an error in the console. Functionally, it makes absolutely no difference, so I'm leaving it there. It adds a bit of charm I think :3</li><br>
+          <li>'Wordle but Worse' sometimes picks weird words as a solution. *Tehnically* they're words that exist in the English dictionary. Practically, nobody knows about them or ever uses them.</li> <br>
+          <li>There's no character limit on 'Form Fighters'. Might be an issue.</li> <br>
+          <li>I hate vanilla JS. Give me TypeScript. *crying emoji*</li> <br>
+        </ul>
+      </div>
+</body>

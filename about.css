@@ -1,0 +1,20 @@
+.everything {
+    display: block;
+    margin-left: 24px;
+    padding-left: 24px;
+    color: white;
+}
+
+.everything textarea {
+    min-width: 40%;
+    height: 260px;
+    resize: none;
+}
+
+.everything h2 {
+    text-decoration: underline;
+}
+
+.everything a {
+    color: white;
+}

@@ -159,10 +159,12 @@ async function getPost(){
     fetch('https://www.reddit.com/r/' + difficulty + '/hot.json')
         .then((res) => {return res.json();})
         .then((res) => {
+            //Data sorting
             const postsArray = res.data.children;
             const currentPost = postsArray[(Math.random()*(10 - 1) + 1).toFixed(0)];
             enemyTitleContent = currentPost.data.title;
             enemyBodyContent = currentPost.data.selftext;
+            //Game logic
             appendEnemyText();
             compareScores();
             return [currentPost.data.title, currentPost.data.selftext];

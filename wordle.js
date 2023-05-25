@@ -102,6 +102,7 @@ function getPosition(){
         return [row, cell];
         
     } else {
+        //Prevents 'properties of undefined' error == an out-of-bounds exception.
         return [5, 4];
     }
     

@@ -1,19 +1,50 @@
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
     <header>
         <div class="logo">
-          <a href="#">My Logo</a>
+          <a href="#">Internet Sem. II</a>
         </div>
         <nav>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="./wordle.html">Wordle</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="form.html">Form Fighters</a></li>
+            <li><a href="wordle.html">Wordle</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </nav>
     </header>
+    <section title>
+        <div class="intro-title-container">
+            <h2>Internet Sem. II</h2>
+        </div>
+        <div class="intro-description-container">
+            <p>This is a collection of games, made as a project for my Internet class at UniTBV.</p>
+            <p>The games are written in the 'vanilla' HTML/CSS/JS stack. This project is open-source and can be found at <a href="https://github.com/stealingudc/Internet-III" target="_blank">https://github.com/stealingudc/Internet-III</a>.</p>
+        </div>
+    </section>
+    <section images>
+      <div class="image-container">
+        <div class="game-object">
+          <a href="./form.html"><img class="preview" src="./resources/form-figthers.svg"></a>
+          <a href="./form.html" id="form-ref">Form Fighters</a>
+        </div>
+        <div class="game-object">
+          <a href="./wordle.html"><img class="preview" src="./resources/wordle.svg"></a>
+          <a href="./wordle.html">Wordle but Worse</a>
+        </div>
+      </div>
+    </section>
+    <section description>
+      <div class="intro-description-container">
+        <p>More details on the 'About' page.</p>
+        <p>Have fun playing!</p>
+      </div>
+    </section>
+    <script src="./form.js"></script>
 </body>
